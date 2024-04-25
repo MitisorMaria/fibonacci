@@ -26,9 +26,8 @@ public class FibonacciController {
     }
 
     @RequestMapping("/goBack")
-    public Response goBack(@RequestParam("userId") Long userId) {
+    public void goBack(@RequestParam("userId") Long userId) {
         handler.handleGoingBack(userId);
-        return new Response();
     }
 
     @GetMapping("/list")

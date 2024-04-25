@@ -30,4 +30,10 @@ public class FibonacciMap {
     public void incrementFibonacciIndexForUser(Long userId) {
         fibonacciMap.put(userId, fibonacciMap.get(userId) + 1);
     }
+
+    public void decrementFibonacciIndexForUser(Long userId) {
+        if (hasUser(userId)) {
+            fibonacciMap.put(userId, Math.max(fibonacciMap.get(userId) - 1, 0));
+        }
+    }
 }

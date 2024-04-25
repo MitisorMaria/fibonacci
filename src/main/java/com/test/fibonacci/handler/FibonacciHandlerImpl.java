@@ -33,6 +33,6 @@ public class FibonacciHandlerImpl implements FibonacciHandler {
 
     @Override
     public void handleGoingBack(final Long userId) {
-
+        fibonacciCalculator.getFibonacciMap().decrementFibonacciIndexForUser(userId);
     }
 }
