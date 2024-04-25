@@ -8,12 +8,11 @@ import java.util.List;
 
 
 /**
- * Component used for returning the next Fibonacci number for a user.
+ * Component used for calculating Fibonacci numbers.
  */
 @Component
 public class FibonacciCalculator {
 
-    @Getter
     private FibonacciMap fibonacciMap;
     @Getter
     private List<Long> fibonacciSequence;

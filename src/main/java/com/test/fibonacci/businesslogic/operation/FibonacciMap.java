@@ -5,6 +5,10 @@ import org.springframework.stereotype.Component;
 import java.util.HashMap;
 import java.util.Map;
 
+
+/**
+ * Keeps track of users and their respective indices in the Fibonacci sequence.
+ */
 @Component
 public class FibonacciMap {
 
