@@ -31,7 +31,7 @@ public class FibonacciController {
         return new Response();
     }
 
-    @RequestMapping("/list")
+    @GetMapping("/list")
     public Response listSequence(@RequestParam("userId") Long userId) {
         return new ResponseBuilder().fibonacciSequence(handler.handleList(userId)).build();
     }

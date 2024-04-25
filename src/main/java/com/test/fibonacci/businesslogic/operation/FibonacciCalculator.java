@@ -1,5 +1,6 @@
 package com.test.fibonacci.businesslogic.operation;
 
+import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.util.ArrayList;
@@ -12,7 +13,9 @@ import java.util.List;
 @Component
 public class FibonacciCalculator {
 
+    @Getter
     private FibonacciMap fibonacciMap;
+    @Getter
     private List<Long> fibonacciSequence;
     private final int FIRST_TWO = 1;
 
