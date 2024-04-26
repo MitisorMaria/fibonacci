@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
-import static com.test.fibonacci.util.ErrorMessages.BAD_VALUE;
-import static com.test.fibonacci.util.ErrorMessages.GENERIC_ERROR_MESSAGE;
-import static com.test.fibonacci.util.ErrorMessages.NEGATIVE_USER_ID_MESSAGE;
-import static com.test.fibonacci.util.ErrorMessages.NULL_ERROR_MESSAGE;
+import static com.test.fibonacci.util.UserMessages.BAD_VALUE;
+import static com.test.fibonacci.util.UserMessages.GENERIC_ERROR_MESSAGE;
+import static com.test.fibonacci.util.UserMessages.NEGATIVE_USER_ID_MESSAGE;
+import static com.test.fibonacci.util.UserMessages.NULL_ERROR_MESSAGE;
 
 
 /**

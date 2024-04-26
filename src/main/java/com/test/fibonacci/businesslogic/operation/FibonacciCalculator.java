@@ -25,12 +25,11 @@ public class FibonacciCalculator {
      * @return the next Fibonacci value.
      */
     public Long getNextNumber(int index) {
-        Long result = fibonacciSequence.getElement(index - 1) + fibonacciSequence.getElement(index - 2);
-        if (index >= fibonacciSequence.getCurrentLength()) {
-            // adds a new number to the sequence
+        Long result;
+        if (index >= 2 && index >= fibonacciSequence.getCurrentLength()) {
+            result = fibonacciSequence.getElement(index - 1) + fibonacciSequence.getElement(index - 2);
             fibonacciSequence.addNewElement(result);
         } else {
-            // returns a number that was already calculated
             result = fibonacciSequence.getElement(index);
         }
         return result;

@@ -16,9 +16,9 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import java.util.ArrayList;
 
-import static com.test.fibonacci.util.ErrorMessages.BAD_VALUE;
-import static com.test.fibonacci.util.ErrorMessages.NEGATIVE_USER_ID_MESSAGE;
-import static com.test.fibonacci.util.ErrorMessages.NULL_ERROR_MESSAGE;
+import static com.test.fibonacci.util.UserMessages.BAD_VALUE;
+import static com.test.fibonacci.util.UserMessages.NEGATIVE_USER_ID_MESSAGE;
+import static com.test.fibonacci.util.UserMessages.NULL_ERROR_MESSAGE;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 

@@ -26,18 +26,10 @@ public class FibonacciHandlerImpl implements FibonacciHandler {
     @Override
     public Long handleGet(final Long userId) {
         Long result;
-        // new user
         if (!fibonacciMap.hasUser(userId)) {
             fibonacciMap.addNewUser(userId);
         }
-        // get the last index in the sequence for the user
-        Integer index = fibonacciMap.getIndexForUser(userId);
-        if (index <= 1) {
-            // first two numbers in the sequence; no addition needed
-            result = fibonacciSequence.getElement(index);
-        } else {
-            result = fibonacciCalculator.getNextNumber(index);
-        }
+        result = fibonacciCalculator.getNextNumber(fibonacciMap.getIndexForUser(userId));
         fibonacciMap.incrementFibonacciIndexForUser(userId);
         return result;
     }

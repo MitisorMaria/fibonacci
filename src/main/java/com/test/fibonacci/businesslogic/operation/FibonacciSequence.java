@@ -6,19 +6,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Stores the elements of the fibonacci sequence that have been calculated so far.
+ * Stores the elements of the Fibonacci sequence that have been calculated so far.
  **/
 @Component
 public class FibonacciSequence {
 
     @Getter
     private List<Long> fibonacciSequence;
-    private final Long FIRST_TWO_ELEMENTS = 1l;
+    private final Long VALUE_OF_FIRST_TWO_ELEMENTS = 1l;
 
     public FibonacciSequence() {
         fibonacciSequence = new ArrayList<>();
-        fibonacciSequence.add(FIRST_TWO_ELEMENTS);
-        fibonacciSequence.add(FIRST_TWO_ELEMENTS);
+        fibonacciSequence.add(VALUE_OF_FIRST_TWO_ELEMENTS);
+        fibonacciSequence.add(VALUE_OF_FIRST_TWO_ELEMENTS);
     }
 
     public Long getElement(int index) {

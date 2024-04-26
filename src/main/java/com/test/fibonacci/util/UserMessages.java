@@ -1,9 +1,9 @@
 package com.test.fibonacci.util;
 
 /**
- * Holds error messages used in the application.
+ * Holds user messages used in the application.
  */
-public class ErrorMessages {
+public class UserMessages {
 
     public static final String NEGATIVE_USER_ID_MESSAGE = "userId should be larger than or equal to 0.";
     public static final String GENERIC_ERROR_MESSAGE = "Wrong userId. Please check the value you entered.";
