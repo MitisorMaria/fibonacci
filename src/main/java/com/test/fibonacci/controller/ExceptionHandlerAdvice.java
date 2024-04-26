@@ -41,7 +41,8 @@ public class ExceptionHandlerAdvice {
     }
 
     @ExceptionHandler(MissingServletRequestParameterException.class)
-    protected ResponseEntity<Response> handleMissingServletRequestParameterException(final MissingServletRequestParameterException exception) {
+    protected ResponseEntity<Response> handleMissingServletRequestParameterException(
+            final MissingServletRequestParameterException exception) {
         return new ResponseEntity<>(Response.builder().message(NULL_ERROR_MESSAGE).build(), HttpStatus.BAD_REQUEST);
     }
 }

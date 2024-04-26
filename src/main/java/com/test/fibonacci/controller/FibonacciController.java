@@ -31,12 +31,12 @@ public class FibonacciController {
     }
 
     @RequestMapping("/goBack")
-    public void goBack(@RequestParam("userId") @Min(0) Long userId) {
+    public void goBack(@RequestParam("userId") @Min(0) @NotNull(message = ErrorMessages.NULL_ERROR_MESSAGE) Long userId) {
         handler.handleGoingBack(userId);
     }
 
     @GetMapping("/list")
-    public Response listSequence(@RequestParam("userId") @Min(0) Long userId) {
+    public Response listSequence(@RequestParam("userId") @Min(0) @NotNull(message = ErrorMessages.NULL_ERROR_MESSAGE) Long userId) {
         return Response.builder().fibonacciSequence(handler.handleList(userId)).build();
     }
 }
