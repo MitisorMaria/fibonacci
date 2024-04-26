@@ -1,10 +1,8 @@
 package com.test.fibonacci.businesslogic.operation;
 
-
 import org.springframework.stereotype.Component;
 import java.util.HashMap;
 import java.util.Map;
-
 
 /**
  * Keeps track of users and their respective indices in the Fibonacci sequence.
@@ -13,8 +11,8 @@ import java.util.Map;
 public class FibonacciMap {
 
     private Integer FIRST = 0;
-
     private Map<Long, Integer> fibonacciMap;
+
     public FibonacciMap() {
         fibonacciMap = new HashMap<>();
     }

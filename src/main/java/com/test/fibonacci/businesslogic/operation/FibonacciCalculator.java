@@ -1,54 +1,38 @@
 package com.test.fibonacci.businesslogic.operation;
 
-import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import java.util.ArrayList;
-import java.util.List;
 
 
 /**
- * Component used for calculating Fibonacci numbers.
+ * Component used for serving numbers from the Fibonacci sequence.
  */
 @Component
 public class FibonacciCalculator {
 
-    private FibonacciMap fibonacciMap;
-    @Getter
-    private List<Long> fibonacciSequence;
-    private final int FIRST_TWO = 1;
+    private FibonacciSequence fibonacciSequence;
 
     @Autowired
-    public FibonacciCalculator(FibonacciMap fibonacciMap) {
-        this.fibonacciMap = fibonacciMap;
-        fibonacciSequence = new ArrayList<>();
-        fibonacciSequence.add(1l);
-        fibonacciSequence.add(1l);
+    public FibonacciCalculator(FibonacciSequence fibonacciSequence) {
+        this.fibonacciSequence = fibonacciSequence;
     }
 
-    public Long getNextNumber(Long userId) {
-        Long result;
-        // new user
-        if (!fibonacciMap.hasUser(userId)) {
-            fibonacciMap.addNewUser(userId);
-        }
-
-        // get the last index in the sequence for the user
-        Integer index = fibonacciMap.getIndexForUser(userId);
-        if (index <= FIRST_TWO) {
-            // first two numbers in the sequence; no addition needed
-            result = fibonacciSequence.get(index);
+    /**
+     * Gets the next number in the sequence, given an index. If the number hasn't been calculated yet, it calculates it
+     * and adds it to the sequence before returning it.
+     *
+     * @param index an index in the Fibonacci sequence.
+     * @return the next Fibonacci value.
+     */
+    public Long getNextNumber(int index) {
+        Long result = fibonacciSequence.getElement(index - 1) + fibonacciSequence.getElement(index - 2);
+        if (index >= fibonacciSequence.getCurrentLength()) {
+            // adds a new number to the sequence
+            fibonacciSequence.addNewElement(result);
         } else {
-            result = fibonacciSequence.get(index - 1) + fibonacciSequence.get(index - 2);
-            if (index >= fibonacciSequence.size()) {
-                // add a new number to the sequence
-                fibonacciSequence.add(result);
-            } else {
-                // return a number that was already calculated
-                result = fibonacciSequence.get(index);
-            }
+            // returns a number that was already calculated
+            result = fibonacciSequence.getElement(index);
         }
-        fibonacciMap.incrementFibonacciIndexForUser(userId);
         return result;
     }
 }
