@@ -2,7 +2,9 @@ package com.test.fibonacci.controller;
 
 import com.test.fibonacci.businesslogic.entity.Response;
 import com.test.fibonacci.handler.FibonacciHandler;
+import com.test.fibonacci.util.ErrorMessages;
 import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +25,8 @@ public class FibonacciController {
     }
 
     @GetMapping("/get")
-    public Response getNextFibonacciNumber(@RequestParam("userId") @Min(0) Long userId) {
+    public Response getNextFibonacciNumber(@RequestParam("userId") @Min(0)
+            @NotNull(message = ErrorMessages.NULL_ERROR_MESSAGE) Long userId) {
         return Response.builder().nextNumber(handler.handleGet(userId)).build();
     }
 

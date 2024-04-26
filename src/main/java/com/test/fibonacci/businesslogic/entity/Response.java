@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.util.List;
 
-
 /**
  * Holds the fields that can be returned when making a request to any of the endpoints in this application.
  */
